@@ -22,7 +22,7 @@ class UserSerializer(serializers.ModelSerializer):  # perhaps name it ExpenseUse
         ]
 
 
-class ExpenseSerializer(serializers.ModelSerializer):
+class ListRetrieveExpenseSerializer(serializers.ModelSerializer):
     user = UserSerializer()
     category = CategorySerializer()
 
@@ -30,6 +30,17 @@ class ExpenseSerializer(serializers.ModelSerializer):
         model = Expense
         fields = [
             "id",
+            "title",
+            "user",
+            "amount",
+            "date",
+            "category",
+        ]
+
+class CreateUpdateExpenseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Expense
+        fields = [
             "title",
             "user",
             "amount",

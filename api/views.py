@@ -7,7 +7,11 @@ from api.data_transfer_objects import ExpensesPerCategoryInputDTO
 from api.filters import ExpenseFilter
 from api.models import Expense
 from api.repository import ExpenseDjangoRepository
-from api.serializers import ExpenseSerializer, ExpensesPerCategorySerializer
+from api.serializers import (
+    CreateUpdateExpenseSerializer,
+    ExpensesPerCategorySerializer,
+    ListRetrieveExpenseSerializer
+)
 from api.use_case import ExpensesPerCategoryUseCase
 
 
@@ -19,7 +23,9 @@ class ExpenseViewSet(ModelViewSet):
     def get_serializer_class(self):
         if self.action == "expenses_per_category":
             return ExpensesPerCategorySerializer
-        return ExpenseSerializer
+        if self.action in ["create", "update"]:
+            return CreateUpdateExpenseSerializer
+        return ListRetrieveExpenseSerializer
 
     @action(detail=False, methods=["get"], url_path="expenses-per-category")
     def expenses_per_category(self, request, *args, **kwargs):
