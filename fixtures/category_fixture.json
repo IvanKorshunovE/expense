@@ -1,0 +1,23 @@
+[
+{
+    "model": "api.category",
+    "pk": 1,
+    "fields": {
+        "name": "Food"
+    }
+},
+{
+    "model": "api.category",
+    "pk": 2,
+    "fields": {
+        "name": "Travel"
+    }
+},
+{
+    "model": "api.category",
+    "pk": 3,
+    "fields": {
+        "name": "Rent"
+    }
+}
+]

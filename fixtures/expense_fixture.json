@@ -1,0 +1,222 @@
+[
+{
+    "model": "api.expense",
+    "pk": 1,
+    "fields": {
+        "title": "Expense 1",
+        "user": 2,
+        "amount": 74,
+        "date": "2024-12-13T16:58:57.673Z",
+        "category": 2
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 2,
+    "fields": {
+        "title": "Expense 2",
+        "user": 3,
+        "amount": 61,
+        "date": "2024-12-13T16:58:57.675Z",
+        "category": 3
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 3,
+    "fields": {
+        "title": "Expense 3",
+        "user": 4,
+        "amount": 36,
+        "date": "2024-12-13T16:58:57.676Z",
+        "category": 1
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 4,
+    "fields": {
+        "title": "Expense 4",
+        "user": 5,
+        "amount": 47,
+        "date": "2024-12-13T16:58:57.677Z",
+        "category": 2
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 5,
+    "fields": {
+        "title": "Expense 5",
+        "user": 6,
+        "amount": 28,
+        "date": "2024-12-13T16:58:57.678Z",
+        "category": 3
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 6,
+    "fields": {
+        "title": "Expense 6",
+        "user": 7,
+        "amount": 85,
+        "date": "2024-12-13T16:58:57.679Z",
+        "category": 1
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 7,
+    "fields": {
+        "title": "Expense 7",
+        "user": 8,
+        "amount": 38,
+        "date": "2024-12-13T16:58:57.680Z",
+        "category": 2
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 8,
+    "fields": {
+        "title": "Expense 8",
+        "user": 1,
+        "amount": 60,
+        "date": "2024-12-13T16:58:57.681Z",
+        "category": 3
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 9,
+    "fields": {
+        "title": "Expense 9",
+        "user": 2,
+        "amount": 83,
+        "date": "2024-12-13T16:58:57.682Z",
+        "category": 1
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 10,
+    "fields": {
+        "title": "Expense 10",
+        "user": 3,
+        "amount": 15,
+        "date": "2024-12-13T16:58:57.682Z",
+        "category": 2
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 11,
+    "fields": {
+        "title": "Expense 11",
+        "user": 4,
+        "amount": 14,
+        "date": "2024-12-13T16:58:57.683Z",
+        "category": 3
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 12,
+    "fields": {
+        "title": "Expense 12",
+        "user": 5,
+        "amount": 35,
+        "date": "2024-12-13T16:58:57.684Z",
+        "category": 1
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 13,
+    "fields": {
+        "title": "Expense 13",
+        "user": 6,
+        "amount": 75,
+        "date": "2024-12-13T16:58:57.685Z",
+        "category": 2
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 14,
+    "fields": {
+        "title": "Expense 14",
+        "user": 7,
+        "amount": 54,
+        "date": "2024-12-13T16:58:57.686Z",
+        "category": 3
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 15,
+    "fields": {
+        "title": "Expense 15",
+        "user": 8,
+        "amount": 47,
+        "date": "2024-12-13T16:58:57.687Z",
+        "category": 1
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 16,
+    "fields": {
+        "title": "Expense 16",
+        "user": 1,
+        "amount": 93,
+        "date": "2024-12-13T16:58:57.689Z",
+        "category": 2
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 17,
+    "fields": {
+        "title": "Expense 17",
+        "user": 2,
+        "amount": 63,
+        "date": "2024-12-13T16:58:57.690Z",
+        "category": 3
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 18,
+    "fields": {
+        "title": "Expense 18",
+        "user": 3,
+        "amount": 72,
+        "date": "2024-12-13T16:58:57.692Z",
+        "category": 1
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 19,
+    "fields": {
+        "title": "Expense 19",
+        "user": 4,
+        "amount": 75,
+        "date": "2024-12-13T16:58:57.693Z",
+        "category": 2
+    }
+},
+{
+    "model": "api.expense",
+    "pk": 20,
+    "fields": {
+        "title": "Expense 20",
+        "user": 5,
+        "amount": 41,
+        "date": "2024-12-13T16:58:57.695Z",
+        "category": 3
+    }
+}
+]
