@@ -8,5 +8,4 @@ services:
     ports:
       - "8000:8000"
     image: expense_app
-    container_name: expense_app_container
-    command: python manage.py runserver 0.0.0.0:8000
+    container_name: expense_app

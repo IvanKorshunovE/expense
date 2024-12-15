@@ -45,9 +45,7 @@ if DEBUG:
         1, "debug_toolbar.middleware.DebugToolbarMiddleware"
     )
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+INTERNAL_IPS = os.getenv("INTERNAL_IPS")
 
 ROOT_URLCONF = "expenseTracker.urls"
 

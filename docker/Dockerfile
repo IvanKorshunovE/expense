@@ -4,7 +4,7 @@ ENV PYTHONBUFFERED=1
 
 WORKDIR /expense_app
 
-# Install system dependencies required for building Python packages
+# TODO: create a separate user for security reason
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
     libffi-dev \
@@ -16,5 +16,9 @@ COPY requirements.txt requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
+COPY ./docker/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENTRYPOINT ["/entrypoint.sh"]
 
 EXPOSE 8000
