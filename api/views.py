@@ -7,20 +7,22 @@ from api.data_transfer_objects import ExpensesPerCategoryInputDTO
 from api.filters import ExpenseFilter
 from api.models import Expense
 from api.repository import ExpenseDjangoRepository
-from api.serializers import ExpenseSerializer
+from api.serializers import ExpenseSerializer, ExpensesPerCategorySerializer
 from api.use_case import ExpensesPerCategoryUseCase
 
 
 class ExpenseViewSet(ModelViewSet):
-    queryset = Expense.objects.all()
-    serializer_class = ExpenseSerializer
+    queryset = Expense.objects.select_related("category", "user")
     filter_backends = (filters.DjangoFilterBackend,)
     filterset_class = ExpenseFilter
 
+    def get_serializer_class(self):
+        if self.action == "expenses_per_category":
+            return ExpensesPerCategorySerializer
+        return ExpenseSerializer
+
     @action(detail=False, methods=["get"], url_path="expenses-per-category")
     def expenses_per_category(self, request, *args, **kwargs):
-
-        # http://localhost:8000/expenses/expenses-per-category/?month=12&year=2024&user_id=5
 
         user_id = request.query_params.get("user_id")
         month = request.query_params.get("month")
@@ -31,4 +33,5 @@ class ExpenseViewSet(ModelViewSet):
         use_case = ExpensesPerCategoryUseCase(expense_repository=ExpenseDjangoRepository())
         result = use_case.execute(input_data)
 
-        return Response(result)
+        serializer = self.get_serializer(result, many=True)
+        return Response(serializer.data)

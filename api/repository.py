@@ -1,5 +1,7 @@
-from api.models import Expense
-from django.db.models import Sum
+from django.db import models
+from django.db.models.functions import Coalesce
+
+from api.models import Expense, Category
 
 
 class ExpenseDjangoRepository:
@@ -19,5 +21,14 @@ class ExpenseDjangoRepository:
         Returns:
             QuerySet: A QuerySet containing category names and total expenses.
         """
-        qs = Expense.objects.filter(date__year=year, date__month=month, user_id=user_id)
-        return qs.values("category__name").annotate(total_amount=Sum("amount"))
+        expense_subquery = Expense.objects.filter(
+            date__year=year, date__month=month, user_id=user_id, category_id=models.OuterRef("pk")
+        ).values("category").annotate(
+            total_amount=models.Sum("amount")
+        ).values("total_amount")
+        return Category.objects.annotate(
+            total_amount=Coalesce(
+                models.Subquery(expense_subquery),
+                models.Value(0)
+            )
+        )

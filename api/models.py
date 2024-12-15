@@ -1,5 +1,5 @@
 from django.contrib.auth.models import AbstractUser
-from django.core.validators import EmailValidator, MinLengthValidator
+from django.core.validators import EmailValidator, MinLengthValidator, MinValueValidator
 from django.db import models
 
 
@@ -23,8 +23,6 @@ class User(models.Model):
 class Expense(models.Model):
     title = models.CharField(max_length=255)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    amount = models.IntegerField(
-        # validators=[MinValueValidator(0)]
-    )  # - Be sure expense is positive
-    date = models.DateTimeField(auto_now_add=True)  # I would consider adding created, updated fields instead of this
+    amount = models.IntegerField(validators=[MinValueValidator(0)])
+    date = models.DateTimeField(auto_now_add=True)  # I would consider adding "created, updated" fields instead
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)

@@ -36,3 +36,11 @@ class ExpenseSerializer(serializers.ModelSerializer):
             "date",
             "category",
         ]
+
+
+class ExpensesPerCategorySerializer(serializers.ModelSerializer):
+    total_amount = serializers.FloatField()
+
+    class Meta:
+        model = Category
+        fields = ["id", "name", "total_amount"]

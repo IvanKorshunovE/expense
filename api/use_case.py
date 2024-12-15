@@ -16,7 +16,6 @@ class ExpensesPerCategoryUseCase:
         user_id = input_dto.user_id
 
         expenses = self.expense_repository.get_expenses_per_category(month, year, user_id)
-        return [
-            {"category": entry["category__name"], "total_amount": entry["total_amount"]}
-            for entry in expenses
-        ]
+        # TODO: create domain model layer as a separate layer, django ORM and domain is not the same thing,
+        #  but to not overcomplicate things I leave as it is for now
+        return expenses
